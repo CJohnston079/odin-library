@@ -49,16 +49,27 @@ table {
 
 
 body {
+    margin-top: 8rem;
+
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.05rem;
+
     background-color: hsl(0, 0%, 95%);
 }
 
 header {
     position: fixed;
     top: 0;
+
+    display: flex;
+    align-items: center;
     
-    width: 100%;
     padding: 2rem;
     border-bottom: solid 2px hsl(0, 0%, 90%);
+    
+    width: 100%;
+    height: 4rem;
+    
     background-color: white;
 
     box-shadow: 0 2px 4px hsl(0, 0%, 50%, 0.2);
@@ -66,4 +77,56 @@ header {
 
 h1 {
     font-size: 2rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+
+    padding: 2rem;
+}
+
+.card {
+    width: 16rem;
+    padding-bottom: 0.5rem;
+    background-color: white;
+}
+
+.card * {
+    margin: 0.5rem 0;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card .author {
+    font-size: 1.2rem;
+    
+    color: hsl(0, 0%, 0%);
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 30%);
+}
+
+button.read,
+button.unread {
+    font-size: 1.2rem;   
+}
+
+button.read {
+    background-color: green;
+}
+
+.unread {
+    color: black;
 }
