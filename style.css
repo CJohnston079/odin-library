@@ -89,8 +89,7 @@ main {
 
 .card {
     width: 16rem;
-    padding-bottom: 0.5rem;
-    background-color: white;
+    animation: fade 1200ms;
 }
 
 .card * {
@@ -129,4 +128,9 @@ button.read {
 
 .unread {
     color: black;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
