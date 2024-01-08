@@ -77,6 +77,14 @@ const princeCaspian = new Book('Prince Caspian', 'C.S. Lewis', './images/prince-
 const theLastBattle = new Book('The Last Battle', 'C.S. Lewis', './images/the-last-battle.jpg');
 const theSilverChair = new Book('The Silver Chair', 'C.S. Lewis', './images/the-silver-chair.jpg');
 const greatExpectations = new Book ('Great Expectations', 'Charles Dickes', './images/great-expectations.jpg');
+const wolfHall = new Book('Wolf Hall', 'Hilary Mantel', './images/wolf-hall.jpg');
+const bringUpTheBodies = new Book('Bring Up The Bodies', 'Hilary Mantel', './images/bring-up-the-bodies.jpg');
+const theMirrorAndTheLight = new Book('The Mirror and the Light', 'Hilary Mantel', './images/the-mirror-and-the-light.jpg');
+const gulliversTravels = new Book("Gulliver's Travels", 'Jonathan Swift', './images/gullivers-travels.jpg');
+const persuasion = new Book('Persuasion', 'Jane Austen', './images/persuasion.jpg');
+const vanityFair = new Book('Vanity Fair', 'William Makepeace Thackeray', './images/vanity-fair.jpg');
+const emma = new Book('Emma', 'Jane Austen', './images/emma.jpg');
+const robinsonCrusoe = new Book('Robinson Crusoe', 'Daniel Defoe', './images/robinson-crusoe.jpg');
 
 addBookToLibrary(theHobbit);
 addBookToLibrary(theLordOfTheRings);
@@ -102,6 +110,14 @@ addBookToLibrary(princeCaspian);
 addBookToLibrary(theLastBattle);
 addBookToLibrary(theSilverChair);
 addBookToLibrary(greatExpectations);
+addBookToLibrary(wolfHall);
+addBookToLibrary(bringUpTheBodies);
+addBookToLibrary(theMirrorAndTheLight);
+addBookToLibrary(gulliversTravels);
+addBookToLibrary(persuasion);
+addBookToLibrary(vanityFair);
+addBookToLibrary(emma);
+addBookToLibrary(robinsonCrusoe);
 
 sortItems(library, 'title')
 loadItems(library)
