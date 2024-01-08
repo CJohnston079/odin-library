@@ -13,7 +13,26 @@ function addBookToLibrary(newBook) {
     library.push(newBook)
 }
 
+function clearLibrary() {
+    while (libraryMain.lastChild) {
+        libraryMain.removeChild(libraryMain.firstChild)
+    }
+}
+
+
+function sortItems(items, sortParam) {
+    items.sort((a, b) => {
+        const itemA = a[sortParam].toLowerCase();
+        const itemB = b[sortParam].toLowerCase();
+
+        return itemA < itemB ? -1
+        : itemA > itemB ? 1
+        : 0;
+    });
+}
+
 function loadItems(items) {
+    clearLibrary()
     for (let i = 0; i < items.length; i += 1) {
         const bookCard = document.createElement('div')
         const bookCover = document.createElement('img')
@@ -84,4 +103,5 @@ addBookToLibrary(theLastBattle);
 addBookToLibrary(theSilverChair);
 addBookToLibrary(greatExpectations);
 
+sortItems(library, 'title')
 loadItems(library)
