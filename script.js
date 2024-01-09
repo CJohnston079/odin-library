@@ -9,20 +9,17 @@ function Book(title, author, isRead=false) {
 }
 
 function getCoverImage(title, mediaType) {
-    coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '') + '.jpg';
-    console.log(coverImagePath)
+    let coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '') + '.jpg';
+    const xhr = new XMLHttpRequest();
 
-    return checkImageExists(coverImagePath) ? coverImagePath
-    : `./images/default/default-${mediaType}.jpg`
-}
+    xhr.open('HEAD', coverImagePath, false);
+    xhr.send();
 
-function checkImageExists(imageUrl) {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(true);
-        img.onerror = () => resolve(false);
-        img.src = imageUrl;
-    });
+    if (xhr.status !== 200) {
+        coverImagePath = `./images/default/default-${mediaType}.jpg`;
+    }
+
+    return coverImagePath;
 }
 
 function addBookToLibrary(newBook) {
@@ -89,7 +86,7 @@ const theLionTheWitchAndTheWardrobe = new Book('The Lion, the Witch and the Ward
 const theHorseAndHisBoy = new Book('The Horse and his Boy', 'C.S. Lewis');
 const theMagiciansNephew = new Book("The Magician's Nephew", 'C.S. Lewis');
 const voyageOfTheDawnTreader = new Book('Voyage of the Dawn Treader', 'C.S. Lewis');
-const aClockworkOrange = new Book('a clockwork orange', 'Anthony Burgess');
+const aClockworkOrange = new Book('A Clockwork Orange', 'Anthony Burgess');
 const princeCaspian = new Book('Prince Caspian', 'C.S. Lewis');
 const theLastBattle = new Book('The Last Battle', 'C.S. Lewis');
 const theSilverChair = new Book('The Silver Chair', 'C.S. Lewis');
@@ -102,6 +99,14 @@ const persuasion = new Book('Persuasion', 'Jane Austen');
 const vanityFair = new Book('Vanity Fair', 'William Makepeace Thackeray');
 const emma = new Book('Emma', 'Jane Austen');
 const robinsonCrusoe = new Book('Robinson Crusoe', 'Daniel Defoe');
+const theRemainsOfDay = new Book('The Remains of the Day', 'Kazuo Ishiguro');
+const senseAndSensibility = new Book('Sense and Sensibility', 'Jane Austen');
+const villette = new Book('Villette', 'Charlotte Bronte');
+const mrsDalloway = new Book('Mrs Dalloway', 'Virginia Woolf');
+const theEndOfTheAffair = new Book('The End of the Affair', 'Graham Greene');
+const theWomanInWhite = new Book('The Woman in White', 'Wilkie Collins');
+const bleakHouse = new Book('Bleak House', 'Charles Dickens');
+const possession = new Book('Possession', 'A. S. Byatt');
 
 addBookToLibrary(theHobbit);
 addBookToLibrary(theLordOfTheRings);
@@ -135,6 +140,14 @@ addBookToLibrary(persuasion);
 addBookToLibrary(vanityFair);
 addBookToLibrary(emma);
 addBookToLibrary(robinsonCrusoe);
+addBookToLibrary(theRemainsOfDay);
+addBookToLibrary(senseAndSensibility);
+addBookToLibrary(villette);
+addBookToLibrary(mrsDalloway);
+addBookToLibrary(theEndOfTheAffair);
+addBookToLibrary(theWomanInWhite);
+addBookToLibrary(bleakHouse);
+addBookToLibrary(possession);
 
 sortItems(library, 'title')
 loadItems(library)
