@@ -9,7 +9,8 @@ function Book(title, author, isRead=false) {
 }
 
 function getCoverImage(title, mediaType) {
-    coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replace(' ', '-') + '.jpg';
+    coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replaceAll(' ', '-') + '.jpg';
+    console.log(coverImagePath)
 
     return checkImageExists(coverImagePath) ? coverImagePath
     : `./images/default/default-${mediaType}.jpg`
@@ -88,7 +89,7 @@ const theLionTheWitchAndTheWardrobe = new Book('The Lion, the Witch and the Ward
 const theHorseAndHisBoy = new Book('The Horse and his Boy', 'C.S. Lewis');
 const theMagiciansNephew = new Book("The Magician's Nephew", 'C.S. Lewis');
 const voyageOfTheDawnTreader = new Book('Voyage of the Dawn Treader', 'C.S. Lewis');
-const aClockworkOrange = new Book('A Clockwork Orange', 'Anthony Burgess');
+const aClockworkOrange = new Book('a clockwork orange', 'Anthony Burgess');
 const princeCaspian = new Book('Prince Caspian', 'C.S. Lewis');
 const theLastBattle = new Book('The Last Battle', 'C.S. Lewis');
 const theSilverChair = new Book('The Silver Chair', 'C.S. Lewis');
