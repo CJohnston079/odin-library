@@ -9,7 +9,7 @@ function Book(title, author, isRead=false) {
 }
 
 function getCoverImage(title, mediaType) {
-    coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replaceAll(' ', '-') + '.jpg';
+    coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '') + '.jpg';
     console.log(coverImagePath)
 
     return checkImageExists(coverImagePath) ? coverImagePath
