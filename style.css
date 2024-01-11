@@ -60,12 +60,13 @@ header {
     position: sticky;
     top: 0;
 
-    display: flex;
+    display: grid;
     justify-content: center;
+    align-content: space-between;
     
     border-bottom: solid 2px hsl(0, 0%, 90%);
     padding: 4rem;
-    height: 100vh;
+    height: calc(100vh - 8rem);
 
     color: white;
     text-shadow: 0 0 4px black;
@@ -74,6 +75,28 @@ header {
     background-image: url(./images/books-background.jpg);
     background-position-y: top;
     background-size: cover;
+}
+
+header button {
+    border: solid 4px white;
+    border-radius: 4px;
+    padding: 1rem;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+
+    background: none;
+    backdrop-filter: blur(4px);
+
+    cursor: pointer;
+
+    transition: color 400ms, background-color 400ms;
+}
+
+header button:hover {
+    color: black;
+    background-color: white;
 }
 
 main {
