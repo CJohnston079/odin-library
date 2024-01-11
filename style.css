@@ -99,6 +99,11 @@ header button:hover {
     background-color: white;
 }
 
+dialog {
+    position: fixed;
+    inset: 50% 0 50% 0;
+}
+
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
