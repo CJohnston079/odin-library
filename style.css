@@ -51,12 +51,9 @@ table {
 body {
     display: grid;
     grid-template-columns: minmax(16rem, 1fr) 4fr;
-    gap: 4rem;
 
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.05rem;
-
-    background-color: hsl(0, 0%, 95%);
 }
 
 header {
@@ -67,7 +64,11 @@ header {
     justify-content: center;
     
     border-bottom: solid 2px hsl(0, 0%, 90%);
+    padding: 4rem;
     height: 100vh;
+
+    color: white;
+    text-shadow: 0 0 4px black;
     
     background-color: white;
     background-image: url(./images/books-background.jpg);
@@ -75,14 +76,21 @@ header {
     background-size: cover;
 }
 
-h1 {
-    font-size: 2rem;
-}
-
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
+
+    padding: 4rem;
+
+    background-color: hsl(0, 0%, 95%);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
 }
 
 .card {
