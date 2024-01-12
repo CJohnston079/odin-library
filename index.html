@@ -15,23 +15,28 @@
         <form method="POST">
             <div class="form-header">
                 <h2>Add new book</h2>
+                <img src="./images/icons/close.svg" alt="Close">
             </div>
             <ul class="form-body">
                 <li>
-                    <label for="title">Title:</label>
-                    <input type="text" name="title">
+                    <label for="Title">Title*</label>
+                    <input type="text" name="title" autofocus>
                 </li>
                 <li>
-                    <label for="author">Author:</label>
+                    <label for="author">Author*</label>
                     <input type="text" name="author">
                 </li>
                 <li>
-                    <label for="pages">Pages:</label>
+                    <label for="pages">Pages*</label>
                     <input type="number" name="pages">
                 </li>
                 <li>
-                    <label for="is-read">Mark as read</label>
-                    <input type="checkbox" name="is-read">
+                    <label>
+                        <input type="radio" name="book-completion" value="read"> Read
+                    </label>
+                    <label>
+                        <input type="radio" name="book-completion" value="unread" checked> Unread
+                    </label>
                 </li>
             </ul>
         </form>
