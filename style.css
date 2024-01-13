@@ -139,9 +139,9 @@ dialog form {
     
     border-bottom: solid 1px hsl(0, 0%, 80%);
     border-radius: 1rem 1rem 0 0;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
 
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
 
     background-color: hsl(0, 0%, 90%);
@@ -191,6 +191,46 @@ input[type='number'] {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     letter-spacing: -0.05rem;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.form-radios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.form-radios .label-radio {
+    display: flex;
+    justify-content: center;
+
+    border: solid 1px hsl(0, 0%, 80%);
+    border-radius: 4px;
+    padding: 0.8rem;
+
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: -0.05rem;
+
+    background-color: hsl(0, 0%, 90%);
+
+    transition: color 400ms, border 400ms, background-color 400ms;
+    cursor: pointer;
+}
+
+.form-radios .label-radio:hover {
+    border: solid 1px hsl(0, 0%, 30%);
+    color: black;
+    background-color: hsl(0, 0%, 100%);
+}
+
+input[type='radio']:checked + .label-radio {
+    color: black;
+    background-color: hsl(0, 0%, 100%);
 }
 
 main {

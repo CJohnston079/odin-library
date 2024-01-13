@@ -19,24 +19,29 @@
             </div>
             <ul class="form-body">
                 <li>
-                    <label for="Title">Title*</label>
+                    <label for="Title">Title</label>
                     <input type="text" name="title" autofocus>
                 </li>
                 <li>
-                    <label for="author">Author*</label>
+                    <label for="author">Author</label>
                     <input type="text" name="author">
                 </li>
                 <li>
-                    <label for="pages">Pages*</label>
+                    <label for="pages">Pages</label>
                     <input type="number" name="pages">
                 </li>
                 <li>
-                    <label>
-                        <input type="radio" name="book-completion" value="read"> Read
-                    </label>
-                    <label>
-                        <input type="radio" name="book-completion" value="unread" checked> Unread
-                    </label>
+                    <label for="form-radios">Book completion</label>
+                    <div class="form-radios">
+                        <div>
+                            <input type="radio" id="book-completion-unread" name="book-completion" value="unread" checked>
+                            <label for="book-completion-unread" class="label-radio">Unread</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="book-completion-read" name="book-completion" value="read">
+                            <label for="book-completion-read" class="label-radio">Read</label>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </form>
