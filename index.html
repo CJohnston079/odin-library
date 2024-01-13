@@ -12,18 +12,18 @@
 </head>
 <body>
     <dialog open>
-        <form method="POST">
+        <form id="new-book" method="POST">
             <div class="form-header">
                 <h2>Add new book</h2>
                 <img src="./images/icons/close.svg" alt="Close">
             </div>
             <ul class="form-body">
                 <li>
-                    <label for="Title">Title</label>
+                    <label for="Title">Title *</label>
                     <input type="text" name="title" autofocus>
                 </li>
                 <li>
-                    <label for="author">Author</label>
+                    <label for="author">Author *</label>
                     <input type="text" name="author">
                 </li>
                 <li>
@@ -44,6 +44,10 @@
                     </div>
                 </li>
             </ul>
+            <div class="form-footer">
+                <button type="submit" form="new-book">Save</button>
+                <button type="reset" form="new-book">Cancel</button>
+            </div>
         </form>
     </dialog>
     <header>
