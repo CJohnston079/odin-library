@@ -24,6 +24,11 @@ function getCoverImage(title, mediaType) {
 }
 
 
+function toggleIsRead(book) {
+    book.isRead = !book.isRead;
+}
+
+
 function addBookToLibrary(newBook) {
     if (books.some(book => book.title == newBook.title)) {
         return

@@ -11,11 +11,11 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <dialog open>
-        <form id="new-book" method="POST">
+    <!-- <dialog open>
+        <form id="new-book" method="dialog">
             <div class="form-header">
                 <h2>Add new book</h2>
-                <img src="./images/icons/close.svg" alt="Close">
+                <img id="close-dialog" src="./images/icons/close.svg" alt="Close">
             </div>
             <ul class="form-body">
                 <li>
@@ -49,10 +49,10 @@
                 <button type="reset" form="new-book">Cancel</button>
             </div>
         </form>
-    </dialog>
+    </dialog> -->
     <header>
         <h1>Library</h1>
-        <button>Add new book</button>
+        <button id="add-new-book">Add new book</button>
     </header>
     <main id="library">
     </main>
