@@ -32,6 +32,12 @@ function addBookToLibrary(newBook) {
 }
 
 
+function removeBookFromLibrary(bookTitle) {
+    const removalIndex = books.findIndex(book => book.title === bookTitle);
+    books.splice(removalIndex, 1);
+}
+
+
 function clearLibrary() {
     while (libraryMainElement.lastChild) {
         libraryMainElement.removeChild(libraryMainElement.firstChild)
