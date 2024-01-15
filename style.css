@@ -102,13 +102,18 @@ header button:hover {
     background-color: white;
 }
 
-dialog {
+dialog,
+dialog:focus-visible {
     border: none;
     background: none;
+    outline: none;
+    animation: fade 400ms;
 }
 
 ::backdrop {
     background-color: hsl(0, 0%, 50%, 0.5);
+
+    animation: fade 400ms;
 }
 
 dialog form {
@@ -205,7 +210,7 @@ button[type='reset']:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     border: solid 1.8px transparent;
     border-radius: 20%;
     padding: 0.2rem;
@@ -350,7 +355,7 @@ button.read {
     color: black;
 }
 
-/* @keyframes fade {
+@keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
-} */
+}
