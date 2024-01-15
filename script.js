@@ -2,6 +2,17 @@ const books = []
 const libraryMainElement = document.getElementById('library');
 
 
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("#add-new-book");
+const closeButton = document.querySelector("#close-dialog");
+const cancelButton = document.querySelector("#cancel-new-item");
+
+showButton.addEventListener("mousedown", () => dialog.showModal());
+
+closeButton.addEventListener("mousedown", () => dialog.close());
+cancelButton.addEventListener("mousedown", () => dialog.close());
+
+
 function Book(title, author, isRead=false) {
     this.title = title;
     this.author = author;
