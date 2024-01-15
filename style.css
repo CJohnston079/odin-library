@@ -296,8 +296,8 @@ input[type='radio']:checked + .label-radio {
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: 2rem 1rem;
 
     padding: 4rem;
 
@@ -315,44 +315,24 @@ h1 {
     display: grid;
     gap: 0.5rem;
     
-    width: 16rem;
+    width: 12rem;
     
     animation: fade 1200ms;
 }
 
 .card img {
     width: 100%;
-    height: 24rem;
-    border-radius: 0.5rem;
+    height: 18rem;
+    border-radius: 0.2rem;
 }
 
 .card h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
 .card .author {
-    font-size: 1.2rem;
-    
-    color: hsl(0, 0%, 0%);
-}
-
-.card p {
-    font-size: 1.2rem;
     color: hsl(0, 0%, 30%);
-}
-
-button.read,
-button.unread {
-    font-size: 1.2rem;   
-}
-
-button.read {
-    background-color: green;
-}
-
-.unread {
-    color: black;
 }
 
 @keyframes fade {
