@@ -36,26 +36,22 @@
                     <label for="form-radios">Book completion</label>
                     <div class="form-radios">
                         <div>
-                            <input type="radio" id="book-completion-unread" name="book-completion" value="unread" checked>
+                            <input type="radio" id="book-completion-unread" name="book-completion" value="false" checked>
                             <label for="book-completion-unread" class="label-radio">Unread</label>
                         </div>
                         <div>
-                            <input type="radio" id="book-completion-read" name="book-completion" value="read">
+                            <input type="radio" id="book-completion-read" name="book-completion" value="true">
                             <label for="book-completion-read" class="label-radio">Read</label>
                         </div>
                     </div>
                 </li>
             </ul>
             <div class="form-footer">
-                <button type="submit" form="new-book">Save</button>
+                <button id="submit-button" type="submit" form="new-book">Save</button>
                 <button id="cancel-new-item" type="reset" form="new-book">Cancel</button>
             </div>
         </form>
     </dialog>
-    <!-- <dialog>
-        <button autofocus>Close</button>
-        <p>This modal dialog has a groovy backdrop!</p>
-    </dialog> -->
     <header>
         <h1>Library</h1>
         <button id="add-new-book">Add new book</button>

@@ -3,11 +3,24 @@ const libraryMainElement = document.getElementById('library');
 
 
 const dialog = document.querySelector("dialog");
+const newBookForm = document.querySelector("#new-book");
 const showButton = document.querySelector("#add-new-book");
 const closeButton = document.querySelector("#close-dialog");
 const cancelButton = document.querySelector("#cancel-new-item");
+const submitButton = document.querySelector("#submit-button");
 
 showButton.addEventListener("mousedown", () => dialog.showModal());
+
+submitButton.addEventListener("mousedown", () => {
+    const title = newBookForm.elements.title.value;
+    const author = newBookForm.elements.author.value;
+    const pages = newBookForm.elements.pages.value;
+    const isRead = newBookForm.elements["book-completion"].value === 'true' ? true : false;
+
+    addBookToLibrary(new Book(title, author, pages, isRead));
+    sortItems(books, 'title');
+    loadItems(books);
+});
 
 closeButton.addEventListener("mousedown", () => dialog.close());
 cancelButton.addEventListener("mousedown", () => dialog.close());
