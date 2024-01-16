@@ -50,9 +50,13 @@ function getCoverImage(title, mediaType) {
 
 function toggleIsRead(event) {
     const isReadButton = event.target.closest('.card').querySelector('button:nth-of-type(1)');
+    const bookTitle = event.target.closest('.card').querySelector('h3').textContent;
+    const book = books.find(book => book.title = bookTitle);
+
     isReadButton.classList.toggle('is-read');
     isReadButton.textContent === 'Read' ? isReadButton.textContent = 'Unread' : isReadButton.textContent = 'Read' ;
-    // book.isRead = !book.isRead;
+    
+    book.isRead = !book.isRead;
 }
 
 
