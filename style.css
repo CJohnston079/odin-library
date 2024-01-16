@@ -361,6 +361,7 @@ h1 {
 .card button.is-read {
     color: gray;
     opacity: 0.5;
+    transition: opacity;
 }
 
 .card button:hover {

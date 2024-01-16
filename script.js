@@ -48,8 +48,11 @@ function getCoverImage(title, mediaType) {
 }
 
 
-function toggleIsRead(book) {
-    book.isRead = !book.isRead;
+function toggleIsRead(event) {
+    const isReadButton = event.target.closest('.card').querySelector('button:nth-of-type(1)');
+    isReadButton.classList.toggle('is-read');
+    isReadButton.textContent === 'Read' ? isReadButton.textContent = 'Unread' : isReadButton.textContent = 'Read' ;
+    // book.isRead = !book.isRead;
 }
 
 
@@ -183,7 +186,12 @@ loadItems(books)
 
 
 const removeButtons = document.querySelectorAll('.card button:nth-of-type(2)');
+const isReadButtons = document.querySelectorAll('.card button:nth-of-type(1)');
 
 removeButtons.forEach(button => {
     button.addEventListener('mousedown', removeCard);
 });
+
+isReadButtons.forEach(button => {
+    button.addEventListener('mousedown', toggleIsRead);
+})
