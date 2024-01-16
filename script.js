@@ -164,3 +164,20 @@ defaultBooks.forEach(addBookToLibrary)
 
 sortItems(books, 'title')
 loadItems(books)
+
+
+const removeButtons = document.querySelectorAll('.card button:nth-of-type(2)');
+
+function removeCard(event) {
+    const cardToRemove = event.target.closest('.card');
+    const bookTitle = cardToRemove.querySelector('h3').textContent;
+
+    if (cardToRemove) {
+        removeBookFromLibrary(bookTitle);
+        cardToRemove.remove();
+    }
+}
+
+removeButtons.forEach(button => {
+    button.addEventListener('mousedown', removeCard);
+});
