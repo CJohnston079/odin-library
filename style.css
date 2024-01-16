@@ -313,11 +313,16 @@ h1 {
 
 .card {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     
     width: 12rem;
     
     animation: fade 1200ms;
+}
+
+.card *:not(button) {
+    grid-column: 1 / span 2;
 }
 
 .card img {
@@ -333,6 +338,33 @@ h1 {
 
 .card .author {
     color: hsl(0, 0%, 30%);
+}
+
+.card button {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: solid 1px transparent;
+    border-radius: 0.2rem;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    
+    background-color: hsl(0, 0%, 90%);
+
+    transition: background-color 400ms, border 400ms;
+    cursor: pointer;
+}
+
+.card button.read {
+    background-color: hsl(0, 0%, 80%);
+}
+
+.card button:hover {
+    border: solid 1px black;
+    background-color: hsl(0, 0%, 100%);  
 }
 
 @keyframes fade {

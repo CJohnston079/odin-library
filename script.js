@@ -93,16 +93,22 @@ function loadItems(items) {
         const bookCover = document.createElement('img')
         const bookTitle = document.createElement('h3')
         const bookAuthor = document.createElement('p')
+        const isReadButton = document.createElement('button')
+        const deleteButton = document.createElement('button')
 
         bookCard.classList.add('card')
         bookCover.src = item.coverSrc;
         bookCover.alt = item.title + ' book cover'
         bookTitle.textContent = item.title;
         bookAuthor.textContent = item.author;
+        isReadButton.textContent = 'Unread';
+        deleteButton.textContent = 'Remove';
 
-        bookCard.appendChild(bookCover)
-        bookCard.appendChild(bookTitle)
-        bookCard.appendChild(bookAuthor)
+        bookCard.appendChild(bookCover);
+        bookCard.appendChild(isReadButton);
+        bookCard.appendChild(deleteButton);
+        bookCard.appendChild(bookTitle);
+        bookCard.appendChild(bookAuthor);
 
         libraryMainElement.appendChild(bookCard);
     })
