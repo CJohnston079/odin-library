@@ -61,6 +61,17 @@ function addBookToLibrary(newBook) {
 }
 
 
+function removeCard(event) {
+    const cardToRemove = event.target.closest('.card');
+    const bookTitle = cardToRemove.querySelector('h3').textContent;
+
+    if (cardToRemove) {
+        removeBookFromLibrary(bookTitle);
+        cardToRemove.remove();
+    }
+}
+
+
 function removeBookFromLibrary(bookTitle) {
     const removalIndex = books.findIndex(book => book.title === bookTitle);
     books.splice(removalIndex, 1);
@@ -86,9 +97,9 @@ function sortItems(items, sortParam) {
 }
 
 
-function loadItems(items) {
+function loadItems(books) {
     clearLibrary()
-    items.forEach(item => {
+    books.forEach(book => {
         const bookCard = document.createElement('div')
         const bookCover = document.createElement('img')
         const bookTitle = document.createElement('h3')
@@ -97,12 +108,17 @@ function loadItems(items) {
         const deleteButton = document.createElement('button')
 
         bookCard.classList.add('card')
-        bookCover.src = item.coverSrc;
-        bookCover.alt = item.title + ' book cover'
-        bookTitle.textContent = item.title;
-        bookAuthor.textContent = item.author;
+        bookCover.src = book.coverSrc;
+        bookCover.alt = book.title + ' book cover'
+        bookTitle.textContent = book.title;
+        bookAuthor.textContent = book.author;
         isReadButton.textContent = 'Unread';
         deleteButton.textContent = 'Remove';
+
+        if (book.isRead) {
+            isReadButton.textContent = 'Read';
+            isReadButton.classList.add('is-read')
+        }
 
         bookCard.appendChild(bookCover);
         bookCard.appendChild(isReadButton);
@@ -116,22 +132,22 @@ function loadItems(items) {
 
 
 const defaultBooks = [
-    new Book('The Hobbit', 'J. R. R. Tolkien'),
-    new Book('The Lord of the Rings', 'J. R. R. Tolkien'),
-    new Book('The Silmarillion', 'J. R. R. Tolkien'),
+    new Book('The Hobbit', 'J. R. R. Tolkien', isRead=true),
+    new Book('The Lord of the Rings', 'J. R. R. Tolkien', isRead=true),
+    new Book('The Silmarillion', 'J. R. R. Tolkien', isRead=true),
     new Book('Middlemarch', 'George Eliot'),
-    new Book('1984', 'George Orwell'),
-    new Book('Animal Farm', 'George Orwell'),
+    new Book('1984', 'George Orwell', isRead=true),
+    new Book('Animal Farm', 'George Orwell', isRead=true),
     new Book('Frankenstein', 'Mary Shelley'),
     new Book('Jane Eyre', 'Charlotte Bronte'),
     new Book('To the Lighthouse', 'Virginia Woolf'),
     new Book('Wuthering Heights', 'Emily Bronte'),
-    new Book('Lord of the Flies', 'William Golding'),
+    new Book('Lord of the Flies', 'William Golding', isRead=true),
     new Book('Through the Looking Glass', 'Lewis Carroll'),
-    new Book('Alice in Wonderland', 'Lewis Carroll'),
+    new Book('Alice in Wonderland', 'Lewis Carroll', isRead=true),
     new Book('Pride and Prejudice', 'Jane Austen'),
-    new Book('The Wind in the Willows', 'Kenneth Grahame'),
-    new Book('The Lion, the Witch and the Wardrobe', 'C.S. Lewis'),
+    new Book('The Wind in the Willows', 'Kenneth Grahame', isRead=true),
+    new Book('The Lion, the Witch and the Wardrobe', 'C.S. Lewis', isRead=true),
     new Book('The Horse and his Boy', 'C.S. Lewis'),
     new Book("The Magician's Nephew", 'C.S. Lewis'),
     new Book('Voyage of the Dawn Treader', 'C.S. Lewis'),
@@ -167,16 +183,6 @@ loadItems(books)
 
 
 const removeButtons = document.querySelectorAll('.card button:nth-of-type(2)');
-
-function removeCard(event) {
-    const cardToRemove = event.target.closest('.card');
-    const bookTitle = cardToRemove.querySelector('h3').textContent;
-
-    if (cardToRemove) {
-        removeBookFromLibrary(bookTitle);
-        cardToRemove.remove();
-    }
-}
 
 removeButtons.forEach(button => {
     button.addEventListener('mousedown', removeCard);
