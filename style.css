@@ -354,14 +354,14 @@ h1 {
     
     background-color: hsl(0, 0%, 90%);
 
-    transition: color 400ms, border 400ms, background-color 400ms;
+    transition: color 400ms, border 400ms, background-color 400ms, opacity 400ms;
     cursor: pointer;
 }
 
 .card button.is-read {
     color: gray;
     opacity: 0.5;
-    transition: opacity;
+    transition: color 400ms, border 400ms, background-color 400ms, opacity 400ms;
 }
 
 .card button:hover {
