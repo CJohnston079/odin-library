@@ -33,6 +33,10 @@ function Book(title, author, isRead=false) {
     this.isRead = isRead;
 }
 
+Book.prototype.toggleIsRead = function() {
+    this.isRead = !this.isRead;
+}
+
 
 function getCoverImage(title, mediaType) {
     let coverImagePath = `./images/${mediaType}s/` + title.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '') + '.jpg';
@@ -48,7 +52,7 @@ function getCoverImage(title, mediaType) {
 }
 
 
-function toggleIsRead(event) {
+function toggleIsReadButton(event) {
     const isReadButton = event.target.closest('.card').querySelector('button:nth-of-type(1)');
     const bookTitle = event.target.closest('.card').querySelector('h3').textContent;
     const book = books.find(book => book.title = bookTitle);
@@ -56,7 +60,7 @@ function toggleIsRead(event) {
     isReadButton.classList.toggle('is-read');
     isReadButton.textContent === 'Read' ? isReadButton.textContent = 'Unread' : isReadButton.textContent = 'Read' ;
     
-    book.isRead = !book.isRead;
+    book.toggleIsRead();
 }
 
 
@@ -197,5 +201,5 @@ removeButtons.forEach(button => {
 });
 
 isReadButtons.forEach(button => {
-    button.addEventListener('mousedown', toggleIsRead);
+    button.addEventListener('mousedown', toggleIsReadButton);
 })
