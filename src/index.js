@@ -39,7 +39,7 @@ class Book {
 
 function getCoverImage(title, mediaType) {
 	let coverImagePath =
-		`./images/${mediaType}s/` +
+		`./assets/images/${mediaType}s/` +
 		title.toLowerCase().replaceAll(" ", "-").replaceAll("'", "") +
 		".jpg";
 	const xhr = new XMLHttpRequest();
@@ -48,7 +48,7 @@ function getCoverImage(title, mediaType) {
 	xhr.send();
 
 	if (xhr.status !== 200) {
-		coverImagePath = `./images/default/default-${mediaType}.jpg`;
+		coverImagePath = `./assets/images/default/default-${mediaType}.jpg`;
 	}
 	return coverImagePath;
 }
