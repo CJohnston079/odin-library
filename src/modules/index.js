@@ -1,5 +1,6 @@
 import Book from "./book.js";
 import defaultBooks from "./defaultBooks";
+import validateForm from "./formValidation.js";
 import { books, addBookToLibrary, removeBookFromLibrary, sortItems, loadItems } from "./library.js";
 
 defaultBooks.forEach(addBookToLibrary);
@@ -39,6 +40,8 @@ function removeCard(event) {
 
 showButton.addEventListener("mousedown", () => dialog.showModal());
 submitButton.addEventListener("mousedown", () => {
+	validateForm();
+
 	const title = newBookForm.elements.title.value;
 	const author = newBookForm.elements.author.value;
 	const isRead = newBookForm.elements["book-completion"].value === "true" ? true : false;
