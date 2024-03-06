@@ -39,8 +39,11 @@ function removeCard(event) {
 }
 
 showButton.addEventListener("mousedown", () => dialog.showModal());
-submitButton.addEventListener("mousedown", () => {
-	validateForm();
+submitButton.addEventListener("click", e => {
+	if (!validateForm(newBookForm)) {
+		e.preventDefault();
+		return;
+	}
 
 	const title = newBookForm.elements.title.value;
 	const author = newBookForm.elements.author.value;
