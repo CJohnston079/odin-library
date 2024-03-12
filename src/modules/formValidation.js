@@ -7,7 +7,8 @@ const validateForm = function (form) {
 		}
 
 		if (element.value.trim() === "") {
-			console.log("please fill in blank inputs");
+			alert("Please fill in blank inputs");
+
 			return false;
 		}
 	}
